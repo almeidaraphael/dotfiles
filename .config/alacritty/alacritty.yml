@@ -1,0 +1,5 @@
+import:
+    - "~/dracula/alacritty/dracula.yml"
+font:
+    normal:
+        family: "MesloLGS NF"
