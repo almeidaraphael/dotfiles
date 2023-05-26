@@ -31,17 +31,39 @@ $white: $foreground;
 // Launcher
 .launcher_icon {
   color: $cyan;
-  font-family: "MesloLGS NF";
+  font-family: "FiraCode Nerd Font Mono";
   font-size: 1.7em;
   padding: 1rem 0 1rem 0;
 }
 
 // Workspaces
-.works {
-  font-family: "MesloLGS NF";
-  padding: 0.2rem 0.7rem 0.2rem 0.7rem;
-  background-color: $black;
-  border-radius: 5px;
+.workspaces {
+  font-family: "FiraCode Nerd Font Mono";
+
+  .workspace {
+    background-color: $black;
+    border-radius: 5px;
+    padding: 1rem;
+
+    .icon {
+      font-size: 1.4rem;
+    }
+  }
+ 
+  .workspace.active-0 {
+    font-weight: bold;
+    background-color: $magenta;
+  }
+
+  .workspace.active-1 {
+    font-weight: normal;
+    background-color: $blue;
+  }
+
+  .workspace.inactive {
+    font-weight: normal;
+    background-color: initial;
+  }
 }
 
 .0,
@@ -122,26 +144,11 @@ $white: $foreground;
 
 // Control Panel
 .control {
-  font-family: "MesloLGS NF";
+  font-family: "FiraCode Nerd Font Mono";
   font-size: 1em;
   background-color: $black;
   border-radius: 5px;
   padding: 0.5rem;
-
-  .bat {
-    padding-right: 0.5rem;
-    color: $blue;
-  }
-
-  .wifi-icon {
-    margin-bottom: 0.2rem;
-    color: $magenta;
-  }
-
-  .brightness-icon {
-    margin: 0.2rem 0 0.2rem 0;
-    color: $yellow;
-  }
 
   .volume-icon {
     margin: 0.2rem 0 0.2rem 0;
@@ -168,7 +175,7 @@ scale trough {
 
 // Clock
 .time {
-  font-family: "MesloLGS NF";
+  font-family: "FiraCode Nerd Font Mono";
   font-weight: bold;
   font-size: 1.2em;
   background-color: $black;
@@ -181,7 +188,7 @@ scale trough {
 // Calendar
 .cal-box {
   background-color: $black;
-  font-family: "MesloLGS NF";
+  font-family: "FiraCode Nerd Font Mono";
   font-size: 1em;
   font-weight: bold;
 
@@ -223,7 +230,7 @@ calendar:indeterminate {
 
 // Powermenu
 .powermenu {
-  font-family: feather;
+  font-family: "FiraCode Nerd Font Mono";
   font-size: 1.4em;
   font-weight: bold;
 }

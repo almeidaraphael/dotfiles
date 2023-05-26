@@ -23,10 +23,7 @@
 )
 
 ;; Workspaces Widgets ;;
-(defwidget workspaces []
-  (literal :content workspace)
-)
-(deflisten workspace "scripts/workspace")
+(include "./workspaces_hyprland.yuck")
 
 ;; Volume Widgets ;;
 (defwidget volum []
@@ -53,7 +50,7 @@
         )
       )
       (button
-        :onclick "pavucontrol"
+        :onclick "pavucontrol&"
         :class "volume-icon"
         "󰕾"
       )
@@ -61,6 +58,7 @@
   )
 )
 (defpoll current-volume
+  :initial "0"
   :interval "1s"
   "pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '(\\d+)(?=%)' | head -n 1"
 )
@@ -68,7 +66,8 @@
 
 ;; Control Panel Widgets ;;
 (defwidget control []
-  (box :orientation "v"
+  (box 
+    :orientation "v"
     :space-evenly false
     :class "control"
     (volum)
@@ -118,14 +117,17 @@
   )
 )
 (defpoll calendar_day
+  :initial "0"
   :interval "10h"
   "date '+%d'"
 )
 (defpoll calendar_month
+  :initial "0"
   :interval "10h"
-  "scripts/calendar"
+  "date +%m"
 )
 (defpoll calendar_year
+  :initial "0"
   :interval "10h"
   "date '+%Y'"
 )
@@ -149,37 +151,26 @@
         (box
           :orientation "v"
           :space-evenly "false"
-          
-          (button
-            :class "button-bspres"
-            :tooltip "BSPWM Restart"
-            :onclick "bspc wm -r" ""
-          )
-          
-          (button
-            :class "button-reb"
-            :tooltip "Reboot"
-            :onclick "reboot"	""
-          )
-          
+
           (button
             :class "button-quit"
             :tooltip "Logout"
-            :onclick "killall bspwm" ""
+            :onclick "hyprctl dispatch exit" "󰗼"
           )
-          
+
           (button
-            :class "button-lock"
-            :tooltip "Lock Screen"
-            :onclick "betterlockscreen -l"	""
+            :class "button-reb"
+            :tooltip "Reboot"
+            :onclick "reboot"	"󰜉"
           )
+
         )
       )
       
       (button
         :class "button-off"
         :tooltip "Shutdown"
-        :onclick "shutdown now"	""
+        :onclick "shutdown now"	""
       )
     )
   )
@@ -236,10 +227,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Bar Windows ;;
 (defwindow bar
-  :geometry (geometry :x "0"
+  :geometry (
+    geometry 
+    :x "0"
     :y "0"
     :height "100%"
-  :width "47px")
+    :width "46px"
+  )
   :monitor 0
   :reserve (struts :distance "35px"
   :side "left")
@@ -258,8 +252,3 @@
   :monitor 0
   (cal)
 )
-
-
-
-
-
