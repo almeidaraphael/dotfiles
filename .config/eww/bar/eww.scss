@@ -145,7 +145,7 @@ $white: $foreground;
 // Control Panel
 .control {
   font-family: "FiraCode Nerd Font Mono";
-  font-size: 1em;
+  font-size: 1.2em;
   background-color: $black;
   border-radius: 5px;
   padding: 0.5rem;
@@ -153,6 +153,11 @@ $white: $foreground;
   .volume-icon {
     margin: 0.2rem 0 0.2rem 0;
     color: $green;
+  }
+
+  .notification-icon {
+    margin: 0.2rem 0 0.2rem 0;
+    color: $yellow
   }
 }
 

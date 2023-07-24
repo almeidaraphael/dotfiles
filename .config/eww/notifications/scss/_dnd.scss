@@ -1,0 +1,87 @@
+.notification-center-dnd-box {
+  background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 1.0), rgba(30, 33, 40, 0.5)), url("./assets/speaker.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 1em;
+  border-radius: 1.5em;
+}
+
+.notification-center-dnd-header {
+  font-size: 20;
+  font-weight: bold;
+  color: $base05;
+}
+
+.notification-center-dnd-footer {
+  font-size: 15;
+  color: lighten($base04, 8%);
+}
+
+.notification-center-dnd-labels {
+  padding: 1.5em;
+}
+
+.notification-center-dnd-toggle {
+  padding: 0.3em 0.8em 0.3em 0.8em;
+  border-radius: 0.3em;
+  font-weight: bold;
+  color: $base02;
+  opacity: 0.6;
+}
+
+.notification-center-dnd-box-inner {
+  padding-top: 0.8em;
+  opacity: 0.4;
+}
+
+.notification-center-dnd-total {
+  font-size: 40;
+  font-weight: bold;
+  color: $base13;
+}
+
+.notification-center-dnd-total-label {
+  color: $base13;
+}
+
+.notification-center-dnd-toggle:hover {
+  opacity: 1.0;
+  border-radius: 1em;
+}
+
+.notification-center-dnd-toggle-ON {
+  background-color: $base14;
+}
+
+.notification-center-dnd-toggle-OFF {
+  background-color: $base11;
+}
+
+.notification-center-dnd-waiting-icon-label {
+  background-color: $base03;
+  border-radius: 2em;
+  opacity: 0.5;
+}
+
+.notification-center-dnd-waiting-padding {
+  padding: 0 0.8em 0 0;
+}
+
+.notification-center-dnd-waiting-margin {
+  margin: 0.3em;
+}
+
+.notification-center-dnd-waiting-icon {
+  background-color: $base13;
+  margin: 0.3em;
+  padding: 0.2em;
+  border-radius: 1em;
+  font-size: 20;
+  color: $base02;
+}
+
+.notification-center-dnd-waiting-label {
+  font-weight: 600;
+}
+
+// vim:filetype=scss

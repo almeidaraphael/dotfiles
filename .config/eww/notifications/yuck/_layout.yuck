@@ -1,0 +1,40 @@
+(defwidget notification_center_layout []
+  (box :orientation "vertical"
+       :space-evenly false
+       :class "notification-center-layout-box"
+    (box :space-evenly false
+         :class "notification-center-headers"
+         :spacing 6
+      (label :text "notification-center"
+             :class "notification-center-headers-label"
+             :halign "start"
+             :hexpand true)
+      (button :onclick "./shell/combine.zsh cls" :class "notification-center-headers-clear" "")
+      (button :onclick "eww -c /home/pheiow/.config/eww/notifications close notification_center" :class "notification-center-headers-close" "󰅚"))
+    (scroll :hscroll false
+            :vscroll true
+            :vexpand true
+            :hexpand true
+            :class "notification-center-scroll"
+      (literal :content notification_center_sub))
+    (label :class "notification-center-separator" :text "")
+    (box :space-evenly false :class "notification-center-misc-box"
+      (_dstats :critical "${notification_center_stats.critical}"
+               :criticon ""
+               :normal "${notification_center_stats.normal}"
+               :normicon ""
+               :low "${notification_center_stats.low}"
+               :lowicon ""
+               :level "2"
+               :thickness 10)
+      (_dnd :total "${notification_center_stats.total}"
+            :footer "Dunst Bell"
+            :total_label "Total"
+            :action "dunstctl set-paused toggle"
+            :state "${notification_center_dnd_state == "true" ? "ON" : "OFF"}"
+            :label "Don't Disturb."
+            :waiting_icon_on "󱏧"
+            :waiting_icon_off "󱇥"
+            :waiting dunst_waiting))))
+
+;; vim:filetype=yuck

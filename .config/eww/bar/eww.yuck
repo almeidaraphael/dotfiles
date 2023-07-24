@@ -4,6 +4,7 @@
 
 ;; put path to aesthetic bar config files here ;;
 (defvar eww "eww -c $HOME/.config/eww/bar")
+(defvar eww_notifications "eww -c /home/pheiow/.config/eww/notifications")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;							Widget Section's							 ;;
@@ -71,6 +72,7 @@
     :space-evenly false
     :class "control"
     (volum)
+    (notifications)
   )
 )
 
@@ -130,6 +132,18 @@
   :initial "0"
   :interval "10h"
   "date '+%Y'"
+)
+
+;; Clock Widgets ;;
+(defwidget notifications []
+  (box
+    :orientation "v"
+    (button
+      :onclick "${eww_notifications} --restart open notification_center --screen 1&"
+      :class "notification-icon"
+      "󱥁"
+    )
+  )
 )
 
 ;; Powermenu Widgets ;;

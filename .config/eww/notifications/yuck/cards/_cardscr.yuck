@@ -1,0 +1,54 @@
+(defwidget _cardscr [
+    summary
+    ?limit_summary
+
+    close
+    ?close_action
+
+    image
+    image_width
+    image_height
+
+    timestamp
+    urgency
+    delete
+    open
+  ]
+  (eventbox :class "notification-center-cardscr-eventbox notification-center-cardscr-eventbox-${urgency}"
+    (box :orientation "vertical"
+         :space-evenly false
+         :class "notification-center-cardscr-container-box notification-center-cardscr-container-box-${urgency}"
+      (box :space-evenly false
+           :class "notification-center-cardscr-summary-box notification-center-cardscr-summary-box-${urgency}"
+        (label :hexpand true
+               :limit-width {limit_summary != "" ? limit_summary : 25}
+               :halign "start"
+               :class "notification-center-cardscr-summary-label notification-center-cardscr-summary-label-${urgency}"
+               :text summary)
+        (label :class "notification-center-cardscr-timestamp notification-center-cardscr-timestamp-${urgency}"
+               :text timestamp)
+        (button :class "notification-center-cardscr-close-button notification-center-cardscr-close-button-${urgency}"
+                :onclick close_action
+                :timeout "2s"
+          (label :text close
+                 :class "notification-center-cardscr-close-icon notification-center-cardscr-close-icon-${urgency}")))
+      (box :class "notification-center-cardscr-image"
+           :style "background-image: url('${image}')"
+           :width image_width
+           :height image_height
+           :space-evenly false)
+      (box :spacing 20
+           :space-evenly true
+           :class "notification-center-cardscr-action-box notification-center-cardscr-action-box-${urgency}"
+           :hexpand true
+           :halign "center"
+        (button :class "notification-center-cardscr-open-button notification-center-cardscr-open-button-${urgency}"
+                :onclick open :timeout "2s"
+          (label :text "Open"
+                 :class "notification-center-cardscr-open-label notification-center-cardscr-open-label-${urgency}"))
+        (button :class "notification-center-cardscr-delete-button notification-center-cardscr-delete-button-${urgency}"
+                :onclick delete :timeout "2s"
+          (label :text "Delete"
+                 :class "notification-center-cardscr-delete-label notification-center-cardscr-delete-label-${urgency}"))))))
+
+;; vim:ft=yuck

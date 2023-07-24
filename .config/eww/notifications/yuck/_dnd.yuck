@@ -1,0 +1,37 @@
+(defwidget _dnd [total total_label label footer state action waiting_icon_off waiting_icon_on waiting]
+  (box :vexpand true
+       :hexpand true
+       :class "notification-center-dnd-box"
+       :space-evenly false
+    (box :class "notification-center-dnd-labels"
+         :hexpand true
+         :orientation "vertical"
+         :space-evenly false
+      (label :halign "start"
+             :class "notification-center-dnd-header"
+             :text label)
+      (label :halign "start"
+             :class "notification-center-dnd-footer"
+             :text footer)
+      (box :halign "center"
+           :valign "center"
+           :orientation "vertical"
+           :vexpand true
+           :class "notification-center-dnd-box-inner"
+           :space-evenly false
+        (label :class "notification-center-dnd-total"
+               :text total)
+        (label :class "notification-center-dnd-total-label"
+               :text total_label))
+      (box :space-evenly false :class "notification-center-dnd-waiting-toggle"
+        (button :onclick action
+                :hexpand true
+                :halign "start"
+                :valign "end"
+                :class "notification-center-dnd-toggle notification-center-dnd-toggle-${state}" state)
+        (box :space-evenly false :class "notification-center-dnd-waiting-icon-label ${waiting == 0 ? "" : "notification-center-dnd-waiting-padding"}"
+          (label :class "notification-center-dnd-waiting-icon ${waiting == 0 ? "" : "notification-center-dnd-waiting-margin"}"
+                 :text {waiting == 0 ? waiting_icon_off : waiting_icon_on})
+          (label :class "notification-center-dnd-waiting-label" :text {waiting == 0 ? "" : waiting}))))))
+
+;; vim:filetype=yuck

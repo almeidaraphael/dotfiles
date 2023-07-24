@@ -1,0 +1,92 @@
+(defwidget _cardprog [
+    summary
+    body
+
+    ?limit_summary
+    ?limit_body
+
+    appname
+    timestamp
+    urgency
+    progress
+
+    icon
+    icon_width
+    icon_height
+    close
+    ?close_action
+
+    ?style
+    image
+    image_width
+    image_height
+  ]
+  (eventbox :class "notification-center-cardprog-eventbox notification-center-cardprog-eventbox-${urgency} notification-center-cardprog-eventbox-${appname}"
+    (box :orientation "vertical"
+         :space-evenly false
+         :class "notification-center-cardprog-container-box notification-center-cardprog-container-box-${urgency} notification-center-cardprog-container-box-${appname}"
+      (box :class "notification-center-cardprog-summary-box notification-center-cardprog-summary-box-${urgency} notification-center-cardprog-summary-box-${appname}"
+           :space-evenly false
+           :spacing 6
+        (box :style "background-image: url('${icon}')"
+             :width icon_width
+             :height icon_height
+             :space-evenly false
+             :class "notification-center-cardprog-icon notification-center-cardprog-icon-${urgency} notification-center-cardprog-icon-${appname}")
+        (label :text appname
+               :hexpand true
+               :halign "start"
+               :class "notification-center-cardprog-appname-label notification-center-cardprog-appname-label-${urgency} notification-center-cardprog-appname-label-${appname}")
+        (button :class "notification-center-cardprog-close-button notification-center-cardprog-close-button-${urgency} notification-center-cardprog-close-button-${appname}"
+                :onclick close_action
+                :timeout "2s"
+          (label :text close
+                 :class "notification-center-cardprog-close-icon notification-center-cardprog-close-icon-${urgency} notification-center-cardprog-close-icon-${appname}")))
+      (box :class "notification-center-cardprog-separator notification-center-cardprog-separator-${urgency} notification-center-cardprog-separator-${appname}"
+           :space-evenly false)
+      (box :class "notification-center-cardprog-body-box notification-center-cardprog-body-box-${urgency} notification-center-cardprog-body-box-${appname}"
+           :space-evenly false
+        (box :halign "center"
+             :valign "center"
+             :class "notification-center-cardprog-image-box notification-center-cardprog-image-box-${urgency} notification-center-cardprog-image-box-${appname}"
+          (box :style "background-image: url('${image}');${style}"
+               :hexpand false
+               :vexpand false
+               :width image_width
+               :height image_height
+               :space-evenly false
+               :class "notification-center-cardprog-image notification-center-cardprog-image-${urgency} notification-center-cardprog-image-${appname}"))
+        (box :spacing 1
+             :hexpand true
+             :vexpand true
+             :valign "center"
+             :orientation "vertical"
+             :class "notification-center-cardprog-body-outer notification-center-cardprog-body-outer-${urgency} notification-center-cardprog-body-outer-${appname}"
+             :space-evenly false
+          (box :class "notification-center-cardprog-summary-body-box notification-center-cardprog-summary-body-box-${urgency} notification-center-cardprog-summary-body-box-${appname}"
+            (label :limit-width {limit_summary != "" ? limit_summary : 25}
+                   :text summary
+                   :halign "start"
+                   :class "notification-center-cardprog-summary-label notification-center-cardprog-summary-label-${urgency} notification-center-cardprog-summary-label-${appname}")
+            (label :text timestamp
+                   :halign "end"
+                   :class "notification-center-cardprog-timestamp notification-center-cardprog-timestamp-${urgency} notification-center-cardprog-timestamp-${appname}"))
+          (label :limit-width {limit_body != "" ? limit_body : 110}
+                 :text body
+                 :halign "start"
+                 :wrap true
+                 :xalign 0.0
+                 :class "notification-center-cardprog-body-label notification-center-cardprog-body-${urgency} notification-center-cardprog-body-${appname}")
+          (box :spacing 15
+               :class "notification-center-cardprog-scale-box notification-center-cardprog-scale-box-${urgency} notification-center-cardprog-scale-box-${appname}"
+               :space-evenly false
+            (scale :hexpand true
+                   :class "notification-center-cardprog-scale notification-center-cardprog-scale-${urgency} notification-center-cardprog-scale-${appname}"
+                   :min 0
+                   :max 100
+                   :active false
+                   :value progress)
+            (label :class "notification-center-cardprog-value-label notification-center-cardprog-value-label-${urgency} notification-center-cardprog-value-label-${appname}"
+                   :text progress)))))))
+
+;; vim:ft=yuck

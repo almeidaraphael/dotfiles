@@ -1,0 +1,55 @@
+.notification-center-layout-box {
+  background-color: $shade10;
+  font-family: "FiraCode Nerd Font Mono";
+  padding-bottom: 1em;
+}
+
+.notification-center-headers {
+  padding: 1em 2em 0 2em;
+  margin-bottom: 1.5em;
+  color: $base05;
+}
+
+.notification-center-headers-label {
+  font-size: 20;
+  font-family: "FiraCode Nerd Font Mono";
+  color: $base05;
+  opacity: 0.8;
+}
+
+.notification-center-headers-clear {
+  font-size: 25;
+  color: $base09;
+}
+
+.notification-center-headers-close {
+  font-size: 25;
+  color: $base11;
+}
+
+.notification-center-headers-clear:hover {
+  color: $base14;
+}
+
+.notification-center-headers-close:hover {
+  color: $base09;
+}
+
+.notification-center-scroll {
+  margin: 0 1.5em 0 1.5em;
+}
+
+@import "empty";
+
+@import "cardprog";
+@import "cardscr";
+@import "cardimage";
+@import "cardradial";
+
+@import "urgency";
+@import "stats";
+@import "dnd";
+@import "modifiers";
+@import "override";
+
+// vim:ft=scss
