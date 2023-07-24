@@ -68,7 +68,7 @@ def main():
             icons = {}
             for client in clients_json:
                 workspace_name = client['workspace']['name']
-                workspace = 'S' if workspace_name == 'special' else workspace_name
+                workspace = 'S' if workspace_name == 'special:scratchpad' else workspace_name
                 processname = client['class']
                 win_title = client['title']
 
