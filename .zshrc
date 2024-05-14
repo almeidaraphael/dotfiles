@@ -185,14 +185,30 @@ for key     kcap   seq        mode   widget (
 }
 
 export PATH=$HOME/.local/bin/:$PATH
+
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DESKTOP_DIR="$HOME/Desktop"
+export XDG_DOWNLOAD_DIR="$HOME/Downloads"
+export XDG_TEMPLATES_DIR="$HOME/Templates"
+export XDG_PUBLICSHARE_DIR="$HOME/Public"
+export XDG_DOCUMENTS_DIR="$HOME/Documents"
+export XDG_MUSIC_DIR="$HOME/Music"
+export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_VIDEOS_DIR="$HOME/Videos"
+
 export PYTHONFAULTHANDLER=1
 export PYTHONUNBUFFERED=1
 export PYTHONDONTWRITEBYTECODE=1
 export PYTHONHASHSEED=random
+
 export MICRO_TRUECOLOR=1
 
 alias ls="lsd"
 alias cat="bat --style=plain --pager=no"
 alias ll="ls -lha"
+alias vpn-up="sudo nmcli connection up ctc"
+alias vpn-dn="sudo nmcli connection down ctc"
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
