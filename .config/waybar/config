@@ -1,233 +1,79 @@
-{
-  "layer": "top",
-  "position": "left",
-  "spacing": 0,
-  "modules-left": [
-    "custom/arch",
-    "hyprland/workspaces"
-  ],
-  "custom/arch": {
-    "format": "󰣇",
-    "tooltip": false,
-    "on-click": "/home/pheiow/.config/rofi/launchers/type-2/launcher.sh",
-    "on-click-right": "swaync-client -t"
-  },
-  "hyprland/workspaces": {
-    "show-special": true,
-    "all-outputs": false,
-    "format": "<span line_height=\"1.4\">{icon}</span>\n<span line_height=\"1.15\">{windows}</span>",
-    "format-window-separator": "\n",
-    "window-rewrite-default": "",
-    "window-rewrite": {
-      "title<.*youtube.*>": "󰗃",
-      "class<firefox>": "󰈹",
-      "class<thunderbird>": "",
-      "class<foot>": "",
-      "class<code(-url-handler)?>": "󰨞",
-      "class<org\\.telegram\\.desktop>": "",
-      "class<libreoffice-calc>": "󱎏",
-      "class<xarchiver>": "",
-      "class<jetbrains-datagrip>": "󰆼",
-      "class<DBeaver>": "",
-      "class<beekeeper-studio>": "󰆼",
-      "class<Calculadora>": "",
-      "class<Transmission>": "",
-      "class<vlc>": "󰕼",
-      "class<com\\.obsproject\\.studio>": "",
-      "class<pavucontrol>": "󰕾",
-      "class<blueman>": "",
-      "class<alacritty>": "",
-      "class<google-chrome>": "",
-      "class<google-chrome-stable>": "",
-      "class<Google-chrome>": "",
-      "class<thunar>": "",
-      "class<ranger>": "",
-      "class<(foot|yazi)> title<yazi.*>": "",
-      "class<imv>": "󰈟",
-      "class<mpv>": "󰈫",
-      "class<rofi>": "",
-      "class<sirula>": "",
-      "class<firefox> title<.*Slack.*>": "",
-      "class<Steam> title<.+>": "",
-      "class<Spotify>": "",
-      "class<MuPDF>": "",
-      "class<obsidian>": "",
-      "title<.*discord.*>": "󰙯",
-      "calibre-gui": "",
-      "org\\.pwmt\\.zathura": "󱗖"
-    },
-    "format-icons": {
-      "1": "󰎦",
-      "2": "󰎩",
-      "3": "󰎬",
-      "4": "󰎮",
-      "5": "󰎰",
-      "6": "󰎵",
-      "7": "󰎸",
-      "8": "󰎻",
-      "9": "󰎾",
-      "scratchpad": "󰬚"
-    },
-    "ignore-workspaces": [
-      "(special:)?hell"
-    ]
-  },
-  "modules-right": [
-    "group/group-control",
-    "group/group-power"
-  ],
-  "group/group-control": {
-    "orientation": "inherit",
-    "modules": [
-      "group/group-upper",
-      "group/group-lower"
-    ]
-  },
-  "group/group-upper": {
-    "orientation": "inherit",
-    "modules": [
-      "group/group-audio",
-      "group/group-backlight",
-      "network"
-    ]
-  },
-  "group/group-audio": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 500,
-      "children-class": "",
-      "transition-left-to-right": false
-    },
-    "modules": [
-      "pulseaudio",
-      "pulseaudio/slider"
-    ]
-  },
-  "pulseaudio": {
-    "scroll-step": 2,
-    "format": "{icon}",
-    "format-muted": "󰝟",
-    "format-source": "",
-    "format-source-muted": "",
-    "format-icons": {
-      "speaker": "󰕾",
-      "hdmi": "󰓃",
-      "headphone": "󰋋",
-      "hands-free": "?",
-      "headset": "󰋎",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": "󰕾"
-    },
-    "on-click-right": "pavucontrol",
-    "on-click": "swayosd-client --output-volume=mute-toggle",
-    "on-scroll-up": "swayosd-client --output-volume=raise",
-    "on-scroll-down": "swayosd-client --output-volume=lower"
-  },
-  "pulseaudio/slider": {
-    "orientation": "vertical"
-  },
-  "group/group-backlight": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 500,
-      "children-class": "",
-      "transition-left-to-right": false
-    },
-    "modules": [
-      "backlight",
-      "backlight/slider"
-    ]
-  },
-  "backlight": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": [
-      "󰃞",
-      "\udcdf",
-      "󰃠"
+[
+  {
+    "output": "DP-1",
+    "reload_style_on_change": true,
+    "layer": "top",
+    "position": "left",
+    "spacing": 0,
+    "include": [
+      "~/.config/waybar/default-modules.json"
     ],
-    "on-scroll-up": "swayosd-client --output-brightness=raise",
-    "on-scroll-down": "swayosd-client --output-brightness=lower"
-  },
-  "backlight/slider": {
-    "orientation": "vertical"
-  },
-  "network": {
-    "format": "{icon}",
-    "format-icons": [
-      "󰤟",
-      "\udd22",
-      "󰤥",
-      "󰤨"
+    "modules-left": [
+      "custom/arch",
+      "hyprland/workspaces"
     ],
-    "format-ethernet": "󰈀",
-    "format-disconnected": "󰤮",
-    "format-disabled": "",
-    "tooltip-format": "{ifname}\n{ipaddr}",
-    "tooltip-format-disconnected": "Not Connected",
-    "tooltip-format-disabled": "Disabled",
-    "on-click": "alacritty --title nmtui -e nmtui"
-  },
-  "group/group-lower": {
-    "orientation": "inherit",
-    "modules": [
-      "clock"
-    ]
-  },
-  "clock": {
-    "format": "{:%H\n%M}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode": "month",
-      "mode-mon-col": 3,
-      "on-scroll": 1,
-      "format": {
-        "months": "<span font_size='14pt' color='#F8F8F2'><b>{}</b></span>",
-        "days": "<span font_size='14pt' color='#F8F8F2'><b>{}</b></span>",
-        "weekdays": "<span font_size='14pt' color='#FFB86C'><b>{}</b></span>",
-        "today": "<span font_size='14pt' color='#BB9AF7'><b><u>{}</u></b></span>"
-      }
+    "modules-right": [
+      "group/group-control",
+      "group/group-power"
+    ],
+    "backlight/slider": {
+      "orientation": "vertical",
+      "device": "ddcci9"
     },
-    "actions": {
-      "on-click-right": "mode",
-      "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
+    "group/group-power": {
+      "orientation": "inherit",
+      "drawer": {
+        "transition-duration": 500,
+        "children-class": "",
+        "transition-left-to-right": false
+      },
+      "modules": [
+        "custom/power",
+        "custom/quit",
+        "custom/lock",
+        "custom/reboot"
+      ]
+    },
+    "custom/power": {
+      "format": "",
+      "tooltip": false,
+      "on-click": "shutdown now"
+    },
+    "custom/quit": {
+      "format": "󰗼",
+      "tooltip": false,
+      "on-click": "hyprctl dispatch exit"
+    },
+    "custom/lock": {
+      "format": "󰍁",
+      "tooltip": false,
+      "on-click": "loginctl lock-session"
+    },
+    "custom/reboot": {
+      "format": "󰜉",
+      "tooltip": false,
+      "on-click": "reboot"
     }
   },
-  "group/group-power": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 500,
-      "children-class": "",
-      "transition-left-to-right": false
-    },
-    "modules": [
-      "custom/power",
-      "custom/quit",
-      "custom/lock",
-      "custom/reboot"
-    ]
-  },
-  "custom/power": {
-    "format": "",
-    "tooltip": false,
-    "on-click": "shutdown now"
-  },
-  "custom/quit": {
-    "format": "󰗼",
-    "tooltip": false,
-    "on-click": "hyprctl dispatch exit"
-  },
-  "custom/lock": {
-    "format": "󰍁",
-    "tooltip": false,
-    "on-click": "loginctl lock-session"
-  },
-  "custom/reboot": {
-    "format": "󰜉",
-    "tooltip": false,
-    "on-click": "reboot"
+  {
+    "output": "DP-2",
+    "reload_style_on_change": true,
+    "layer": "top",
+    "position": "left",
+    "spacing": 0,
+    "include": [
+      "~/.config/waybar/default-modules.json"
+    ],
+    "modules-left": [
+      "custom/arch",
+      "hyprland/workspaces"
+    ],
+    "modules-right": [
+      "group/group-control"
+    ],
+    "backlight/slider": {
+      "orientation": "vertical",
+      "device": "ddcci10"
+    }
   }
-}
+]

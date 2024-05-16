@@ -95,16 +95,24 @@ window#waybar {
   font-weight: bold;
 }
 
-#network {
-  color: @orange;
-}
-
 #pulseaudio {
   color: @green;
 }
 
 #pulseaudio-slider highlight {
   background-color: @green;
+}
+
+#backlight {
+  color: @orange;
+}
+
+#backlight-slider highlight {
+  background-color: @orange;
+}
+
+#network {
+  color: @yellow;
 }
 
 #group-control {
