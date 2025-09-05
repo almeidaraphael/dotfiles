@@ -83,6 +83,7 @@ plugins=(
 	docker-compose 
 	zsh-autosuggestions 
 	zsh-syntax-highlighting
+	asdf
 )
 
 source ~/dracula/zsh-syntax-highlighting/zsh-syntax-highlighting.sh
@@ -185,6 +186,13 @@ for key     kcap   seq        mode   widget (
 }
 
 export PATH=$HOME/.local/bin/:$PATH
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$JAVA_HOME/bin
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -204,11 +212,17 @@ export PYTHONHASHSEED=random
 
 export MICRO_TRUECOLOR=1
 
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+
 alias ls="lsd"
 alias cat="bat --style=plain --pager=no"
 alias ll="ls -lha"
-alias vpn-up="sudo nmcli connection up ctc"
-alias vpn-dn="sudo nmcli connection down ctc"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+eval "$(gh copilot alias -- zsh)"
+export PATH="$PATH:/home/pheiow/Android/Sdk/emulator:/home/pheiow/Android/Sdk/platform-tools"
+
+alias claude="/home/pheiow/.claude/local/claude"
+
+. "$HOME/.local/bin/env"

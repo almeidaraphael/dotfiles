@@ -12,42 +12,23 @@
     "format-window-separator": "\n",
     "window-rewrite-default": "",
     "window-rewrite": {
-      "title<.*youtube.*>": "󰗃",
-      "class<firefox>": "󰈹",
-      "class<thunderbird>": "",
-      "class<foot>": "",
-      "class<code(-url-handler)?>": "󰨞",
-      "class<org\\.telegram\\.desktop>": "",
-      "class<libreoffice-calc>": "󱎏",
-      "class<xarchiver>": "",
-      "class<jetbrains-datagrip>": "󰆼",
-      "class<DBeaver>": "",
-      "class<beekeeper-studio>": "󰆼",
-      "class<Calculadora>": "",
-      "class<Transmission>": "",
-      "class<vlc>": "󰕼",
-      "class<com\\.obsproject\\.studio>": "",
-      "class<pavucontrol>": "󰕾",
-      "class<blueman>": "",
-      "class<alacritty>": "",
-      "class<google-chrome>": "",
-      "class<google-chrome-stable>": "",
-      "class<Google-chrome>": "",
-      "class<thunar>": "",
-      "class<ranger>": "",
-      "class<(foot|yazi)> title<yazi.*>": "",
-      "class<imv>": "󰈟",
-      "class<mpv>": "󰈫",
-      "class<rofi>": "",
-      "class<sirula>": "",
-      "class<firefox> title<.*Slack.*>": "",
-      "class<Steam> title<.+>": "",
-      "class<Spotify>": "",
-      "class<MuPDF>": "",
-      "class<obsidian>": "",
-      "title<.*discord.*>": "󰙯",
-      "calibre-gui": "",
-      "org\\.pwmt\\.zathura": "󱗖"
+      "Code": "󰨞",
+      "xarchiver": "",
+      "DBeaver": "",
+      "Calculadora": "",
+      "transmission": "",
+      "vlc": "󰕼",
+      "pavucontrol": "󰕾",
+      "blueman": "",
+      "alacritty": "",
+      "google-chrome-stable>": "",
+      "Google-chrome": "",
+      "thunar": "",
+      "ranger": "",
+      "imv": "󰈟",
+      "mpv": "󰈫",
+      "rofi": "",
+      "spotify": ""
     },
     "format-icons": {
       "1": "󰎦",
@@ -67,59 +48,16 @@
     "orientation": "inherit",
     "modules": ["group/group-upper", "group/group-lower"]
   },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": "",
+        "deactivated": ""
+    }
+  },
   "group/group-upper": {
     "orientation": "inherit",
-    "modules": ["group/group-audio", "group/group-backlight", "network"]
-  },
-  "group/group-audio": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 500,
-      "children-class": "",
-      "transition-left-to-right": false
-    },
-    "modules": ["pulseaudio", "pulseaudio/slider"]
-  },
-  "pulseaudio": {
-    "scroll-step": 2,
-    "format": "{icon}",
-    "format-muted": "󰝟",
-    "format-source": "",
-    "format-source-muted": "",
-    "format-icons": {
-      "speaker": "󰕾",
-      "hdmi": "󰓃",
-      "headphone": "󰋋",
-      "hands-free": "?",
-      "headset": "󰋎",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": "󰕾"
-    },
-    "on-click-right": "pavucontrol",
-    "on-click": "swayosd-client --output-volume=mute-toggle",
-    "on-scroll-up": "swayosd-client --output-volume=raise",
-    "on-scroll-down": "swayosd-client --output-volume=lower"
-  },
-  "pulseaudio/slider": {
-    "orientation": "vertical"
-  },
-  "group/group-backlight": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 500,
-      "children-class": "",
-      "transition-left-to-right": false
-    },
-    "modules": ["backlight", "backlight/slider"]
-  },
-  "backlight": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": ["󰃞", "󰃟", "󰃠"],
-    "on-scroll-up": "swayosd-client --brightness=raise",
-    "on-scroll-down": "swayosd-client --brightness=lower"
+    "modules": ["idle_inhibitor","network"]
   },
   "network": {
     "format": "{icon}",
@@ -138,6 +76,7 @@
   },
   "clock": {
     "format": "{:%H\n%M}",
+    "locale": "pt_BR.utf8",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "month",
