@@ -1,0 +1,4 @@
+[mcp_servers.capy]
+command = "bash"
+args = [".codex/scripts/capy.sh", "serve"]
+env_vars = ["CAPY_DB_KEY"]

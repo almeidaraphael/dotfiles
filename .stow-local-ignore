@@ -1,0 +1,8 @@
+^hyprland\.lua$
+^active-theme\.conf$
+^active-wallpaper\.conf$
+^active-theme\.lua$
+^active-theme\.toml$
+^settings\.local\.json$
+^btop\.log$
+^settings\.yml$

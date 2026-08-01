@@ -1,0 +1,20 @@
+{
+  "activeTheme": "dracula",
+  "activeWallpapers": {
+    "DP-1": "/home/pheiow/Pictures/wallpapers/dracula/01_dracula_hmc.png",
+    "DP-2": "/home/pheiow/Pictures/wallpapers/dracula/01_dracula_hmc.png"
+  },
+  "sidebarMonitors": [],
+  "weatherLocation": "",
+  "temperatureUnit": "C",
+  "clockFormat": "24h",
+  "wallpaperInterval": 600,
+  "wallpaperMode": "random",
+  "notificationTimeout": 3000,
+  "reduceMotion": false,
+  "ollamaBaseUrl": "http://127.0.0.1:11434",
+  "searxUrl": "http://127.0.0.1:8890",
+  "embeddingModel": "nomic-embed-text",
+  "maxFolderAttachFiles": 40,
+  "preferredModel": "llama3.1:latest"
+}

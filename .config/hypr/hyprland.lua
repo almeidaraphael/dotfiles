@@ -1,0 +1,6 @@
+require("monitors")
+require("settings")
+require("rules")
+require("binds")
+require("theme")
+require("startup")

@@ -1,0 +1,11 @@
+# Generate a real secret before first run: openssl rand -hex 32
+# Replace the placeholder below with that value.
+use_default_settings: true
+
+server:
+  secret_key: "REPLACE_WITH_OUTPUT_OF_openssl_rand_hex_32"
+
+search:
+  formats:
+    - html
+    - json

@@ -1,0 +1,19 @@
+# Dracula theme for bat
+# https://draculatheme.com
+
+--theme="Dracula"
+
+# Show line numbers, Git modifications and file header (but no grid)
+--style="numbers,changes,header"
+
+# Use italic text on the terminal (not supported on all terminals)
+--italic-text=always
+
+# Add mouse scrolling support in less (does not work with all terminals)
+--paging=always
+
+# Use C++ syntax for .h files
+--map-syntax "*.h:C++"
+
+# Use "gitignore" highlighting for ".ignore" files
+--map-syntax ".ignore:Git Ignore"

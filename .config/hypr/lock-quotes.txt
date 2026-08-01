@@ -1,0 +1,23 @@
+A wizard is never late, nor is he early. He simply forgot to set an alarm.
+Not all who wander are lost. Some just didn't read the error message.
+One does not simply walk into main without a code review.
+Even the smallest commit can change the course of the codebase.
+All we have to decide is what to do with the RAM that is given to us.
+The board is set, the pieces are moving. Someone forgot to write tests.
+A wizard arrives precisely when the deploy finishes. Not a moment sooner.
+Keep it secret. Keep it safe. Especially the .env file.
+There is some good in this world, and it's worth `git commit`ing for.
+Fly, you fools. Production is stable, for now.
+Even the very small can leave a footprint in the logs.
+Do not disturb the water. The cache is sleeping.
+It is not the strength of the server, but the strength of the backup.
+True courage is knowing when to `git blame` yourself first.
+The board is set. The pieces are moving. Refactor tomorrow.
+So do all who live to see such times reboot without saving first.
+Ash nazg durbatulûk — one config to rule them all.
+A day may come when the tests fail. But it is not this day.
+Speak "friend" and enter. Or just use your password like a normal person.
+Even the wise cannot see all ends. Especially in a merge conflict.
+There is more in you than even you know, including three background processes.
+The world is indeed full of peril, and in it there are many dark places. Most of them are Stack Overflow tabs from 2011.
+Deep breath. It's just a lockscreen.

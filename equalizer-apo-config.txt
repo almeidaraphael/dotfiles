@@ -1,0 +1,36 @@
+# Equalizer APO config — Fifine AM8T mic noise suppression
+# Mirrors Linux PipeWire chain: RNNoise → Gate → Compressor
+#
+# Place this file at:
+#   C:\Program Files\EqualizerAPO\config\config.txt
+#
+
+Device: Microphone (fifine Microphone)
+
+# ── 1. RNNoise ───────────────────────────────────────────────────────────────
+# Werman noise-suppression-for-voice VST2
+# After loading, open plugin GUI and set:
+#   VAD Threshold: 85 %
+VSTPlugin: RNNoise_mono.dll
+
+# ── 2. Gate ──────────────────────────────────────────────────────────────────
+# LSP Gate Mono VST2 — gates the already-cleaned signal between words
+# After loading, open plugin GUI and set:
+#   Threshold    : -40 dB  (raise to -30 dB if gate opens on background voice)
+#   Reduction    : -72 dB  (max)
+#   Attack       :   1 ms
+#   Release      : 150 ms
+#   Lookahead    :   5 ms  (opens gate before word onset — prevents clipping starts)
+#   SC HPF mode  : 24 dB/oct
+#   SC HPF freq  : 80 Hz
+VSTPlugin: lsp-plugins-gate-mono-vst2.dll
+
+# ── 3. Compressor ────────────────────────────────────────────────────────────
+# LSP Compressor Mono VST2
+# After loading, open plugin GUI and set:
+#   Threshold    : -18 dB
+#   Ratio        :  3.0:1
+#   Attack       : 10 ms
+#   Release      : 100 ms
+#   Makeup gain  : +4 dB  (compensates level loss from gate+rnnoise chain)
+VSTPlugin: lsp-plugins-compressor-mono-vst2.dll

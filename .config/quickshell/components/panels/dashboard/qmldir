@@ -1,0 +1,10 @@
+Divider 1.0 Divider.qml
+VDivider 1.0 VDivider.qml
+SectionLabel 1.0 SectionLabel.qml
+SegCtrl 1.0 SegCtrl.qml
+OverviewTabBody 1.0 OverviewTabBody.qml
+MediaTabBody 1.0 MediaTabBody.qml
+ThemeTabBody 1.0 ThemeTabBody.qml
+PowerTabBody 1.0 PowerTabBody.qml
+SystemTabBody 1.0 SystemTabBody.qml
+SettingsTabBody 1.0 SettingsTabBody.qml

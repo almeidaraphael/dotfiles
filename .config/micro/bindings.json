@@ -1,0 +1,13 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "CtrlUnderscore": "lua:comment.comment",
+    "Ctrl-/": "lua:comment.comment",
+    "Ctrl-4": "ShellMode",
+    "Ctrl-q": "QuitAll",
+    "Ctrl-w": "Quit",
+    "OldBackspace": "DeleteWordLeft",
+    "CtrlDelete": "DeleteWordRight",
+    "F1": "Find",
+    "F3": "FindNext",
+    "Tab": "IndentSelection|InsertTab"
+}

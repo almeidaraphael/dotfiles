@@ -1,0 +1,5 @@
+module Quickshell.Rice.Themes
+singleton Theme 1.0 Theme.qml
+singleton DraculaTheme 1.0 DraculaTheme.qml
+singleton TokyoNightTheme 1.0 TokyoNightTheme.qml
+singleton NordTheme 1.0 NordTheme.qml
